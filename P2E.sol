@@ -178,6 +178,7 @@ contract SpacebirdzP2E {
         require(amount > 0, "No withdrawal to reject");
         
         pendingWithdrawal[_user] = 0;
+        pendingRewards[_user] += amount;
         emit WithdrawalRejected(_user, amount);
     }
 }
